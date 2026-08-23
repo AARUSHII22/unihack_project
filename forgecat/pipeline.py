@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import math
 from pathlib import Path
 from typing import Any
 
@@ -30,6 +31,13 @@ def _delivery_columns() -> list[str]:
     return list(df.columns)
 
 
+def _safe_text(value: Any) -> str:
+    """Normalize CSV/XLSX cell values before they reach enrichment stages."""
+    if value is None or (isinstance(value, float) and math.isnan(value)):
+        return ""
+    return str(value).strip()
+
+
 def _brand_slug(brand_name: str) -> str:
     return brand_name.replace("®", "").replace("™", "").replace(" ", "_").upper()
 
@@ -52,6 +60,9 @@ def _populate_item_features(record: dict[str, Any], features: list[str]) -> None
 
 
 def enrich_row(raw_row: dict[str, Any], use_llm: bool = False) -> dict[str, Any]:
+    # Uploaded spreadsheets may contain floating-point NaN values.  Ensure all
+    # downstream rules receive strings, even if a caller bypasses ingest_file.
+    raw_row = {key: _safe_text(value) for key, value in raw_row.items()}
     hero_skus = load_hero_skus()
     mpn = raw_row.get("Mfg_Part_Num", "")
     part_desc = raw_row.get("Part_Desc", "")
