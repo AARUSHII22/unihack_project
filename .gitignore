@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Generated artifacts
+output/
+data/forgecat.db
+
+# Streamlit
+.streamlit/secrets.toml
+

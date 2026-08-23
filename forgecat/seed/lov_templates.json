@@ -1,0 +1,109 @@
+{
+  "Appliances & Consumer Electronics>Kitchen Appliances>Built-In Dishwashers": {
+    "attributes": [
+      {"label": "Series", "values": ["Professional Series", "Eco Series", "UltraWash Series", "Top Control Series"], "uom": []},
+      {"label": "Model", "values": [], "uom": []},
+      {"label": "Number of Wash Cycles", "values": ["3", "4", "5", "6", "7", "8"], "uom": []},
+      {"label": "Voltage Rating", "values": ["120", "240"], "uom": ["V"]},
+      {"label": "Amperage Rating", "values": ["10", "15", "20"], "uom": ["A"]},
+      {"label": "Mounting Type", "values": ["Leg", "Built-in", "Undercounter", "Portable"], "uom": []},
+      {"label": "Plug Type", "values": [], "uom": []},
+      {"label": "Size", "values": [], "uom": ["in"]},
+      {"label": "Depth With Door Open", "values": [], "uom": ["in"]},
+      {"label": "Minimum Height", "values": [], "uom": ["in"]},
+      {"label": "Maximum Height", "values": [], "uom": ["in"]},
+      {"label": "Sound Level", "values": [], "uom": ["dBA"]},
+      {"label": "Material", "values": ["Stainless Steel", "Plastic", "Hybrid"], "uom": []},
+      {"label": "Color", "values": ["Stainless Steel", "Black", "White", "Fingerprint Resistant Stainless Steel"], "uom": []},
+      {"label": "Additional Information", "values": [], "uom": []}
+    ],
+    "material_map": {"ss": "Stainless Steel", "sst": "Stainless Steel", "bss": "Stainless Steel", "bk": "Black", "bo": "Black"},
+    "mounting_map": {"leg": "Leg", "built-in": "Built-in", "built in": "Built-in", "undercounter": "Undercounter"}
+  },
+  "Tools & Hardware>Abrasives & Finishing>Abrasive Discs & Belts": {
+    "attributes": [
+      {"label": "Type", "values": ["Sanding Belt", "Cut-Off Disc", "Grinding Wheel", "Sanding Disc", "Flap Disc"], "uom": []},
+      {"label": "Diameter", "values": [], "uom": ["in"]},
+      {"label": "Width", "values": [], "uom": ["in"]},
+      {"label": "Arbor Size", "values": [], "uom": ["in"]},
+      {"label": "Grit", "values": ["P40", "P60", "P80", "P100", "P120", "P150", "P180", "P220", "P240", "P320", "P400", "P600"], "uom": []},
+      {"label": "Material", "values": ["Aluminum Oxide", "Zirconia", "Ceramic", "Silicon Carbide"], "uom": []},
+      {"label": "Pack Quantity", "values": [], "uom": ["pc"]}
+    ],
+    "type_map": {
+      "sanding belt": "Sanding Belt",
+      "cut off disc": "Cut-Off Disc",
+      "cut-off disc": "Cut-Off Disc",
+      "grinding wheel": "Grinding Wheel",
+      "sanding disc": "Sanding Disc",
+      "flap disc": "Flap Disc"
+    }
+  },
+  "Electrical & Lighting>Lighting>Lamps & Bulbs": {
+    "attributes": [
+      {"label": "Type", "values": ["LED Bulb", "LED Lamp", "Fluorescent Lamp", "Halogen Lamp"], "uom": []},
+      {"label": "Wattage", "values": [], "uom": ["W"]},
+      {"label": "Color Temperature", "values": ["2700 K", "3000 K", "3500 K", "4000 K", "5000 K"], "uom": []},
+      {"label": "Base Type", "values": ["Medium", "Candelabra", "GU10", "Bi-Pin"], "uom": []},
+      {"label": "Shape", "values": ["A19", "BR30", "BR40", "PAR38", "T8"], "uom": []},
+      {"label": "Lumens", "values": [], "uom": ["lm"]}
+    ],
+    "shape_map": {"br40": "BR40", "br30": "BR30", "a19": "A19", "par38": "PAR38"}
+  },
+  "Building Materials>Decking & Railing>Composite Decking": {
+    "attributes": [
+      {"label": "Type", "values": ["Deck Board", "Railing Kit", "Baluster", "Post Cap"], "uom": []},
+      {"label": "Length", "values": [], "uom": ["ft"]},
+      {"label": "Width", "values": [], "uom": ["in"]},
+      {"label": "Material", "values": ["Composite", "PVC", "Aluminum"], "uom": []},
+      {"label": "Color", "values": ["Tide Pool", "Beach Dune", "Clam Shell", "White"], "uom": []}
+    ],
+    "type_map": {"deck": "Deck Board", "rail": "Railing Kit", "baluster": "Baluster"}
+  },
+  "Plumbing>Kitchen & Bath>Faucets": {
+    "attributes": [
+      {"label": "Series", "values": [], "uom": []},
+      {"label": "Mounting Type", "values": ["Deck Mount", "Wall Mount", "Widespread", "Centerset", "Single Hole"], "uom": []},
+      {"label": "Number of Handles", "values": ["1", "2", "3"], "uom": []},
+      {"label": "Spout Reach", "values": [], "uom": ["in"]},
+      {"label": "Spout Height", "values": [], "uom": ["in"]},
+      {"label": "Flow Rate", "values": [], "uom": ["gpm"]},
+      {"label": "Material", "values": ["Brass", "Stainless Steel", "Zinc", "Plastic"], "uom": []},
+      {"label": "Finish", "values": ["Chrome", "Brushed Nickel", "Matte Black", "Stainless Steel", "Bronze"], "uom": []},
+      {"label": "Additional Information", "values": [], "uom": []}
+    ]
+  },
+  "Plumbing>Pipe Fittings & Connectors>Pipe Fittings": {
+    "attributes": [
+      {"label": "Fitting Type", "values": ["Coupling", "Elbow", "Tee", "Adapter", "Nipple", "Union", "Bushing", "Cap", "Plug", "Reducer"], "uom": []},
+      {"label": "Connection Type", "values": ["Female NPT", "Male NPT", "Compression", "Sweat", "Press", "Flare"], "uom": []},
+      {"label": "Size", "values": [], "uom": ["in"]},
+      {"label": "Material", "values": ["Brass", "Stainless Steel", "Cast Iron", "PVC", "CPVC", "Copper", "Galvanized Steel", "Bronze"], "uom": []},
+      {"label": "Material Construction", "values": ["Brass", "Stainless Steel", "Copper", "PVC", "CPVC"], "uom": []},
+      {"label": "Pressure Rating", "values": [], "uom": ["psi"]}
+    ]
+  },
+  "Plumbing>Pipe & Tubing>Pipe & Tubing": {
+    "attributes": [
+      {"label": "Type", "values": ["PVC Pipe", "Copper Tube", "PEX Tubing", "Hose"], "uom": []},
+      {"label": "Size", "values": [], "uom": ["in"]},
+      {"label": "Material", "values": ["PVC", "CPVC", "Copper", "PEX", "Rubber"], "uom": []},
+      {"label": "Length", "values": [], "uom": ["ft"]}
+    ]
+  },
+  "Tools & Hardware>Fasteners>General Fasteners": {
+    "attributes": [
+      {"label": "Type", "values": ["Screw", "Bolt", "Nail", "Anchor"], "uom": []},
+      {"label": "Size", "values": [], "uom": ["in"]},
+      {"label": "Material", "values": ["Steel", "Stainless Steel", "Brass", "Zinc"], "uom": []},
+      {"label": "Pack Quantity", "values": [], "uom": ["pc"]}
+    ]
+  },
+  "General Merchandise>General>General Products": {
+    "attributes": [
+      {"label": "Type", "values": [], "uom": []},
+      {"label": "Material", "values": [], "uom": []},
+      {"label": "Size", "values": [], "uom": []}
+    ]
+  }
+}

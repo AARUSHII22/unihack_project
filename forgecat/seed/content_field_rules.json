@@ -1,0 +1,8 @@
+{
+  "INVOICE_DESC": {"max_length": 40, "casing": "UPPER", "formula": "Item type + key specs abbreviated"},
+  "MOBILE_DESC": {"min_length": 60, "max_length": 80, "formula": "Manufacturer, Brand, Item Type, Series, MPN"},
+  "SHORT_DESC": {"formula": "Brand + Series + MPN + Item Type + key attributes"},
+  "LONG_DESC1": {"formula": "Brand + Item Type + attributes in LOV order"},
+  "RETAIL_DESC": {"formula": "Series + Item Type + key attributes"},
+  "MARKETING_DESCRIPTION": {"formula": "Manufacturer source only", "source_required": true}
+}
