@@ -36,7 +36,7 @@ with col2:
 if st.button("Run Pipeline", type="primary"):
     with st.spinner("Importing master data and enriching rows..."):
         if input_file:
-            temp = ROOT / "output" / "_upload_input" + Path(input_file.name).suffix
+            temp = ROOT / "output" / f"_upload_input{Path(input_file.name).suffix}"
             temp.parent.mkdir(parents=True, exist_ok=True)
             temp.write_bytes(input_file.getvalue())
             input_path = str(temp)
