@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import math
 import re
 from typing import Any
 
@@ -11,20 +12,28 @@ from forgecat.db import get_connection
 from forgecat.ingest import normalize_mpn
 
 
-def _desc_lower(desc: str) -> str:
-    return f" {desc.lower()} "
+def _text(value: Any) -> str:
+    """Return a safe string for CSV/XLSX values, including pandas NaN."""
+    if value is None or (isinstance(value, float) and math.isnan(value)):
+        return ""
+    return str(value).strip()
+
+
+def _desc_lower(desc: Any) -> str:
+    return f" {_text(desc).lower()} "
 
 
 def resolve_manufacturer(
-    part_manuf: str | None,
-    part_desc: str,
+    part_manuf: Any,
+    part_desc: Any,
 ) -> dict[str, Any]:
     conn = get_connection()
     rows = conn.execute("SELECT * FROM manufacturers").fetchall()
     conn.close()
 
-    desc = _desc_lower(part_desc or "")
-    distributor = (part_manuf or "").lower()
+    desc = _desc_lower(part_desc)
+    manufacturer_text = _text(part_manuf)
+    distributor = manufacturer_text.lower()
     candidates: list[dict[str, Any]] = []
 
     for row in rows:
@@ -58,7 +67,7 @@ def resolve_manufacturer(
 
     if not candidates and distributor:
         names = list({r["manufacturer_name"] for r in rows})
-        match = process.extractOne(part_manuf or "", names, scorer=fuzz.token_set_ratio)
+        match = process.extractOne(manufacturer_text, names, scorer=fuzz.token_set_ratio)
         if match and match[1] >= 60:
             for row in rows:
                 if row["manufacturer_name"] == match[0]:
@@ -72,8 +81,8 @@ def resolve_manufacturer(
                     )
                     break
 
-    if not candidates and part_manuf:
-        cleaned = re.sub(r"\s*\([^)]*\)", "", part_manuf).strip()
+    if not candidates and manufacturer_text:
+        cleaned = re.sub(r"\s*\([^)]*\)", "", manufacturer_text).strip()
         if cleaned and cleaned != "-":
             candidates.append(
                 {

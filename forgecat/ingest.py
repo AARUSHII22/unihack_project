@@ -22,7 +22,9 @@ def clean_placeholder(value: Any) -> str | None:
 def ingest_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     rows = df.copy()
     for col in rows.columns:
-        rows[col] = rows[col].apply(clean_placeholder)
+        # Keep missing source values as empty strings.  This prevents pandas
+        # NaN values from reaching string-based enrichment stages.
+        rows[col] = rows[col].apply(clean_placeholder).fillna("")
     if "Mfg_Part_Num" in rows.columns:
         rows["Mfg_Part_Num"] = rows["Mfg_Part_Num"].astype(str).str.strip()
     if "Part_Desc" in rows.columns:
